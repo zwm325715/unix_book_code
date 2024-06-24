@@ -1,9 +1,19 @@
 # 版本 cmake --version来查看当前安装的cmake版本
 cmake_minimum_required(VERSION 3.0)
 
-project(TESTCMAKE)
+execute_process(COMMAND which gcc COMMAND tr -d '\n' OUTPUT_VARIABLE GCC_BIN)
+set(CMAKE_C_COMPILER ${GCC_BIN})
 
-#debug参数
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11")
-#debug
-set(CMAKE_BUILD_TYPE Debug)
+project(UNIX 
+        VERSION 1.0.0
+        LANGUAGES C)
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DLINUX -D_GNU_SOURCE")
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+#头文件搜索目录
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+add_subdirectory(lib)
+add_subdirectory(src)
