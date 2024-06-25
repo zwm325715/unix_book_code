@@ -1,0 +1,20 @@
+#编译生成的可执行文件放在bin/1目录下
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/bin/1)
+add_executable(ls1_1.4.3
+                ls1_1.4.3.c 
+                $<TARGET_OBJECTS:aque>)
+add_executable(mycat_1.5.3
+                mycat_1.5.3.c 
+                $<TARGET_OBJECTS:aque>)                
+add_executable(getcputc_1.5.4
+                getcputc_1.5.4.c
+                $<TARGET_OBJECTS:aque>)                
+add_executable(hello_1.6.2
+                hello_1.6.2.c
+                $<TARGET_OBJECTS:aque>) 
+add_executable(shell1_1.6.3
+                shell1_1.6.3.c
+                $<TARGET_OBJECTS:aque>) 
+add_executable(testerror_1.7
+                testerror_1.7.c
+                $<TARGET_OBJECTS:aque>) 

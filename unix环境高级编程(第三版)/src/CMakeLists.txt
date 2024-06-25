@@ -1,12 +1,2 @@
-add_executable(ls1_1.4.3
-                1/ls1_1.4.3.c 
-                $<TARGET_OBJECTS:aque>)
-add_executable(mycat_1.5.3
-                1/mycat_1.5.3.c 
-                $<TARGET_OBJECTS:aque>)                
-add_executable(getcputc_1.5.4
-                1/getcputc_1.5.4.c
-                $<TARGET_OBJECTS:aque>)                
-add_executable(hello_1.6.2
-                1/hello_1.6.2.c
-                $<TARGET_OBJECTS:aque>) 
+add_subdirectory(1)
+add_subdirectory(2)
