@@ -1,7 +1,12 @@
-add_executable(1_ls1 
-                1/ls1.c 
+add_executable(ls1_1.4.3
+                1/ls1_1.4.3.c 
                 $<TARGET_OBJECTS:aque>)
 add_executable(mycat_1.5.3
                 1/mycat_1.5.3.c 
                 $<TARGET_OBJECTS:aque>)                
-#cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..
+add_executable(getcputc_1.5.4
+                1/getcputc_1.5.4.c
+                $<TARGET_OBJECTS:aque>)                
+add_executable(hello_1.6.2
+                1/hello_1.6.2.c
+                $<TARGET_OBJECTS:aque>) 
