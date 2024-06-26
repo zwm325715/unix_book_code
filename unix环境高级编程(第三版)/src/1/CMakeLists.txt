@@ -18,3 +18,9 @@ add_executable(shell1_1.6.3
 add_executable(testerror_1.7
                 testerror_1.7.c
                 $<TARGET_OBJECTS:aque>) 
+add_executable(uidgic_1.8.2
+                uidgic_1.8.2.c
+                $<TARGET_OBJECTS:aque>)                 
+add_executable(shell2_1.9
+                shell2_1.9.c
+                $<TARGET_OBJECTS:aque>)                 
