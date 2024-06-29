@@ -4,3 +4,4 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/bin/2)
 #                 ls1_1.4.3.c 
 #                 $<TARGET_OBJECTS:aque>)
 
+add_subdirectory(2.5.4)
