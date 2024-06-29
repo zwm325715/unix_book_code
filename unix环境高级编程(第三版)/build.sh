@@ -40,7 +40,16 @@ function compile() {
     cd $BUILD_PATH
 
     echo_info "1.******开始编译******"
-    cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 $BASE_PATH 
+    echo_info "compile=$1"
+    # 没有传参数时就是编译所有
+    if [ -z "$1" ];then
+      echo_info "----编译所有章节----"
+      cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCHAPTER=all "$BASE_PATH"
+    else #否则编译对应的参数章节
+      echo_info "----编译第${1}章节----"
+      cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCHAPTER="$1" "$BASE_PATH"   
+    fi
+    
     check_command "cmake编译" 
 
     echo_info "2.******开始make******"
@@ -63,16 +72,17 @@ function clean() {
 }
 
 function main(){
-    if [ $# -ne 1 ];then
-       echo_err "只支持1个参数，支持的参数列表如下:"
-       echo_err_tab_prefix "gen:编译"
+    if [ $# -ne 1 -a $# -ne 2 ];then
+       echo_err "只支持1或2个参数，支持的参数列表如下:"
+       echo_err_tab_prefix "gen:编译所有;gen num:编译num章节"
        echo_err_tab_prefix "clean:清除编译的文件"
        exit
     fi
     # 第一个参数
     case "$1" in
     "gen")
-      compile
+      #$2:表示只编译哪个章节，all表示全部
+      compile "$2"
       ;;
     # 其他(任意字符串)
     "clean")

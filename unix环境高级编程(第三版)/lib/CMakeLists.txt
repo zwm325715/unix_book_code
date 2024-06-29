@@ -1,5 +1,10 @@
+set(LIB_SRCS 
+        error.c    
+        openmax.c
+        pathalloc.c 
+    )
 #aque对象库
 add_library(aque 
             OBJECT
-            error.c    
+            ${LIB_SRCS}    
             )
