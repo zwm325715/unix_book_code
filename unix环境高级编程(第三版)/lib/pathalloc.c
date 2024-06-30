@@ -1,3 +1,4 @@
+//图2-16 为路径名动态地分配空间
 #include "apue.h"
 #include <errno.h>
 #include <limits.h>

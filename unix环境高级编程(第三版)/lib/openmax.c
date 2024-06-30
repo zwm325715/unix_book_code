@@ -1,3 +1,4 @@
+//图2-17 确定文件描述符个数
 #include "apue.h"
 #include <errno.h>
 #include <limits.h>
