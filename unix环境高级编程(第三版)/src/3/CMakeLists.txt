@@ -5,4 +5,8 @@ add_executable(seek
                 $<TARGET_OBJECTS:aque>)
 add_executable(hole
                 hole.c
-                $<TARGET_OBJECTS:aque>)              
+                $<TARGET_OBJECTS:aque>)
+add_executable(nohole
+                nohole.c 
+                $<TARGET_OBJECTS:aque>)
+                         
