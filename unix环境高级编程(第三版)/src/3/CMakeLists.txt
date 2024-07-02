@@ -9,4 +9,8 @@ add_executable(hole
 add_executable(nohole
                 nohole.c 
                 $<TARGET_OBJECTS:aque>)
+add_executable(sus_lp64Offset
+                sus_lp64Offset.c
+                $<TARGET_OBJECTS:aque>)
+                
                          
