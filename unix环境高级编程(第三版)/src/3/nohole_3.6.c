@@ -3,7 +3,7 @@
 
 char	buf[] = "a";
 
-//图3-2:创建一个具有空洞的文件
+//3.6:创建一个没有空洞的文件
 int main(void) {
 	int	fd;
     int count;
