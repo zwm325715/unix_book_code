@@ -12,7 +12,11 @@ add_executable(nohole_3.6
 add_executable(sus_lp64Offset_3.6
                 sus_lp64Offset_3.6.c
                 $<TARGET_OBJECTS:aque>)
-                
 add_executable(mycat_3.9
                 mycat_3.9.c
-                $<TARGET_OBJECTS:aque>)                        
+                $<TARGET_OBJECTS:aque>)    
+
+add_executable(dupTest_3.12
+                dupTest_3.12.c
+                $<TARGET_OBJECTS:aque>)
+target_compile_definitions(dupTest_3.12 PRIVATE -D_BIN_DIR="${CMAKE_RUNTIME_OUTPUT_DIRECTORY}" ) 
