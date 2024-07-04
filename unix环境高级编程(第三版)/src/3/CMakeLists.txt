@@ -20,3 +20,7 @@ add_executable(dupTest_3.12
                 dupTest_3.12.c
                 $<TARGET_OBJECTS:aque>)
 target_compile_definitions(dupTest_3.12 PRIVATE -D_BIN_DIR="${CMAKE_RUNTIME_OUTPUT_DIRECTORY}" ) 
+
+add_executable(fileflags_3.14
+                fileflags_3.14.c
+                $<TARGET_OBJECTS:aque>)
