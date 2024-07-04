@@ -2,6 +2,7 @@ set(LIB_SRCS
         error.c    
         openmax.c
         pathalloc.c 
+        setfl_3.14.c
     )
 #aque对象库
 add_library(aque 
