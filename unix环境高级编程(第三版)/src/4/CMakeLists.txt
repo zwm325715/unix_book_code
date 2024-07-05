@@ -3,3 +3,7 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/bin/4)
 add_executable(filetype_4.3
                 filetype_4.3.c
                 $<TARGET_OBJECTS:aque>)
+                
+add_executable(access_4.7
+                access_4.7.c
+                $<TARGET_OBJECTS:aque>)                
