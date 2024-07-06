@@ -6,4 +6,12 @@ add_executable(filetype_4.3
                 
 add_executable(access_4.7
                 access_4.7.c
-                $<TARGET_OBJECTS:aque>)                
+                $<TARGET_OBJECTS:aque>)
+                
+add_executable(umask.4.8
+                umask.4.8.c
+                $<TARGET_OBJECTS:aque>)
+
+add_executable(changemod.4.9
+                changemod.4.9.c
+                $<TARGET_OBJECTS:aque>)
