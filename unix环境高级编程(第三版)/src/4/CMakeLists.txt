@@ -19,4 +19,12 @@ add_executable(changemod.4.9
 add_executable(unlink.4.15
                 unlink.4.15.c
                 $<TARGET_OBJECTS:aque>)                
-   
+
+add_executable(zap.4.20
+                zap.4.20.c
+                $<TARGET_OBJECTS:aque>)
+
+add_executable(ftw8_4.22
+                ftw8_4.22.c
+                $<TARGET_OBJECTS:aque>)
+                
