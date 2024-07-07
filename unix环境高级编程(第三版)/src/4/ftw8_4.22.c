@@ -7,20 +7,21 @@
 	普通函数类型的别名:每一个文件名都会被调用
 */
 typedef	int	Myfunc(const char *, const struct stat *, int);
-//全局函数变量myfunc
-static Myfunc	myfunc;
+//普通函数声明
+static Myfunc	myfunc1;
 static int		myftw(char *, Myfunc *);
 static int		dopath(Myfunc *);
 //统计各种类型的文件的变量
 static long	nreg, ndir/*目录个数*/, nblk, nchr, nfifo, nslink, nsock, ntot;
 
+// 实例4-4:遍历文件层次结构，统计各种类型的文件个数
 int main(int argc, char *argv[]) {
 	int		ret;
 
 	if (argc != 2)
 		err_quit("usage:  ftw  <starting-pathname>");
 	
-	ret = myftw(argv[1], myfunc/*下面的myfunc函数*/);		/* does it all */
+	ret = myftw(argv[1], myfunc1/*下面的myfunc1函数*/);		/* does it all */
 	//总数
 	ntot = nreg + ndir + nblk + nchr + nfifo + nslink + nsock;
 	if (ntot == 0)
@@ -134,7 +135,7 @@ static int dopath(Myfunc* func) {
 	return(ret);
 }
 
-static int myfunc(const char *pathname, 
+static int myfunc1(const char *pathname, 
 				 const struct stat *statptr, 
 				 int type/*类型:FTW_D(目录)*/) {
 	switch (type) {

@@ -27,4 +27,11 @@ add_executable(zap.4.20
 add_executable(ftw8_4.22
                 ftw8_4.22.c
                 $<TARGET_OBJECTS:aque>)
+
+add_executable(mycd_4.23
+                mycd_4.23.c
+                $<TARGET_OBJECTS:aque>)
+add_executable(cdpwd_4.23
+                cdpwd_4.23.c
+                $<TARGET_OBJECTS:aque>)
                 
