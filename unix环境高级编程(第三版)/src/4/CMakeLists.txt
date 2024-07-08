@@ -34,4 +34,8 @@ add_executable(mycd_4.23
 add_executable(cdpwd_4.23
                 cdpwd_4.23.c
                 $<TARGET_OBJECTS:aque>)
-                
+
+add_executable(devrdev_4.24
+                devrdev_4.24.c
+                $<TARGET_OBJECTS:aque>)
+                                
