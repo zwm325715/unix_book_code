@@ -5,4 +5,10 @@ add_executable(getcputc_5.8
                 $<TARGET_OBJECTS:aque>)
 add_executable(fgetsfputs_5.8
                 fgetsfputs_5.8.c
-                $<TARGET_OBJECTS:aque>)          
+                $<TARGET_OBJECTS:aque>)
+
+add_executable(buf_5.12
+                buf_5.12.c
+                $<TARGET_OBJECTS:aque>)
+# target_compile_definitions(buf_5.12 PRIVATE -D_LP64) 
+                
