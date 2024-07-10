@@ -11,4 +11,13 @@ add_executable(buf_5.12
                 buf_5.12.c
                 $<TARGET_OBJECTS:aque>)
 # target_compile_definitions(buf_5.12 PRIVATE -D_LP64) 
+
+
+add_executable(tempfiles_5.13
+                tempfiles_5.13.c
+                $<TARGET_OBJECTS:aque>)
+
+add_executable(mkstemp_5.13
+                mkstemp_5.13.c
+                $<TARGET_OBJECTS:aque>)
                 
