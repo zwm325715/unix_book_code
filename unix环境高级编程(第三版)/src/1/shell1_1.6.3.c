@@ -17,6 +17,7 @@ int main(void) {
       1.循环从"标准输入"一次读取一行,放到buf中
       2.当键入文件结束符(ctrl+D)作为行的第一个字符时,
         fgets返回一个null指针,于是while循环停止.
+	  3.标准输入/输出均为行缓冲方式，每次调用fgets时会自动flush标准输出设备 
     */
 	while (fgets(buf, MAXLINE, stdin) != NULL) {
         /**
