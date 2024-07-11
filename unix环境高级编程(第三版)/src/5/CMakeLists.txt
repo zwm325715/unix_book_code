@@ -20,4 +20,8 @@ add_executable(tempfiles_5.13
 add_executable(mkstemp_5.13
                 mkstemp_5.13.c
                 $<TARGET_OBJECTS:aque>)
+
+add_executable(memstr_5.14
+                memstr_5.14.c
+                $<TARGET_OBJECTS:aque>)
                 
