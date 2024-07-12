@@ -3,3 +3,7 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/bin/7)
 add_executable(doatexit_7.3
                 doatexit_7.3.c
                 $<TARGET_OBJECTS:aque>)
+                
+add_executable(echoarg_7.4
+                echoarg_7.4.c
+                $<TARGET_OBJECTS:aque>)
