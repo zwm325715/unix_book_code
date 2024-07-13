@@ -7,3 +7,12 @@ add_executable(doatexit_7.3
 add_executable(echoarg_7.4
                 echoarg_7.4.c
                 $<TARGET_OBJECTS:aque>)
+
+add_executable(testjmp_7.10_no_optimize
+                testjmp_7.10.c
+                $<TARGET_OBJECTS:aque>)
+
+add_executable(testjmp_7.10_optimize
+                testjmp_7.10.c
+                $<TARGET_OBJECTS:aque>)
+target_compile_options(testjmp_7.10_optimize PRIVATE "-O")
