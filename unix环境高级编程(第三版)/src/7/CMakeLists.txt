@@ -16,3 +16,7 @@ add_executable(testjmp_7.10_optimize
                 testjmp_7.10.c
                 $<TARGET_OBJECTS:aque>)
 target_compile_options(testjmp_7.10_optimize PRIVATE "-O")
+
+add_executable(getrlimit_7.11
+                getrlimit_7.11.c
+                $<TARGET_OBJECTS:aque>)
