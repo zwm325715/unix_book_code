@@ -18,14 +18,20 @@ int main(void) {
 
 	var = 88;
 	/*
-		写到到标准输出
+		1.写到到标准输出
 			sizeof是包含尾零的，这里-1是去掉尾零(不是去掉'\n')
+		2.write是系统调用，不带缓冲	
 	*/	
 	if (write(STDOUT_FILENO, buf, sizeof(buf)-1) != sizeof(buf)-1)
 		err_sys("write error");
 	/* we don't flush stdout 
-		没有显示调用flush来刷新标准输出缓冲区
-			默认标准输出是行缓冲模式，buf有换行符，所以也会flush
+	1.printf是标准I/O的函数，是带缓冲的
+	2.没有显示调用flush来刷新标准输出缓冲区
+		默认标准输出是行缓冲模式，buf有换行符，所以也会flush
+	3.但是重定向到文件时，就变成全缓冲了
+		在调用fork时,该行数据还在缓冲区中，
+		然后在将父进程数据空间复制到子进程中，该缓冲区数据也被复制到子进程中.
+		因此父子进程在进程终止时，该行数据都会写到文件中
 	*/
 	printf("before fork\n");	
 	//创建子进程
@@ -36,13 +42,15 @@ int main(void) {
 			由于是COW写时复制，是副本因此不会影响父进程中的值:
 				不管是全局还是局部变量
 		*/
+		sleep(5);
 		/* modify variables 修改全局变量*/
 		globvar++;
 		//修改局部变量
 		var++;
 	} else {/* parent 父进程走这里*/
 		//这里用的伪同步：让子进程先走完(不一定哦)
-		sleep(2);
+		//10.16节中，会使用信号使父子进程同步
+		sleep(10);
 	}
 	/*
 	父子进程都会执行打印语句:
