@@ -44,7 +44,10 @@ int main(void) {
 		//这里用的伪同步：让子进程先走完(不一定哦)
 		sleep(2);
 	}
-	//父子进程都会执行打印语句
+	/*
+	父子进程都会执行打印语句:
+	   一般是子进程先输出，不过不一定哦,还是依赖cpu调度，虽然主线程睡眠了2s
+	*/
 	printf("pid = %ld, glob = %d, var = %d\n", 
 			(long)getpid(), globvar, var);
 	exit(0);
