@@ -7,4 +7,3 @@ add_executable(vfork1_8.4
                 vfork1_8.4.c
                 $<TARGET_OBJECTS:aque>)
 
-                
