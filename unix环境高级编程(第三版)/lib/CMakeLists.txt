@@ -3,6 +3,7 @@ set(LIB_SRCS
         openmax.c
         pathalloc.c 
         setfl_3.14.c
+        prexit_8.6.c
     )
 #aque对象库
 add_library(aque 

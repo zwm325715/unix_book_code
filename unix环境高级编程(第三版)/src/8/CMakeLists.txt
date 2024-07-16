@@ -3,7 +3,12 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/bin/8)
 add_executable(fork1_8.3
                 fork1_8.3.c
                 $<TARGET_OBJECTS:aque>)
+                
 add_executable(vfork1_8.4
                 vfork1_8.4.c
                 $<TARGET_OBJECTS:aque>)
 
+add_executable(wait1_8.6
+                wait1_8.6.c
+                $<TARGET_OBJECTS:aque>)
+                
