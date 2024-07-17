@@ -12,3 +12,16 @@ add_executable(wait1_8.6
                 wait1_8.6.c
                 $<TARGET_OBJECTS:aque>)
                 
+add_executable(fork2_8.6
+                fork2_8.6.c
+                $<TARGET_OBJECTS:aque>)
+                
+add_executable(tellwait1_8.9
+                tellwait1_8.9.c
+                $<TARGET_OBJECTS:aque>)
+
+add_executable(tellwait2_8.9
+                tellwait2_8.9.c
+                $<TARGET_OBJECTS:aque>)
+
+                

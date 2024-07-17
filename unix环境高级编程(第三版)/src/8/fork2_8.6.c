@@ -31,18 +31,24 @@ int main(void) {
 		 * Here's where we'd continue executing, knowing that when
 		 * we're done, init will reap(/riːp/ 获得;收获；收割) our status.
 		 */
-		//睡了2s:"保证"在打印父进程ID时第一个子进程(子进程)已终止，让init进程接管孙子进程
+		/**
+		睡了2s:"保证"在打印父进程ID时第一个子进程(子进程)已终止，让init进程接管孙子进程
+		   就是为了避免(这样也不一定哦，只是大概率)出现
+		   "孙子进程先退出了，子进程还没有退出，也没wait"的情况，
+		   此时孙子就是僵死进程
+		*/
 		sleep(2);
 		//输出孙子进程的父进程
-		printf("second child, parent pid = %ld\n", (long)getppid());
+		printf("second child, parent pid = %ld", (long)getppid());
 		//孙子进程退出(init进程会进行wait操作，避免了僵死)
 		exit(0);
 	}
 	//等待的是"子进程(first)"终止
-	if (waitpid(pid, NULL, 0) != pid)	/* wait for first child */
+	if (waitpid(pid, NULL, 0) != pid) {	/* wait for first child */
 		err_sys("waitpid error");
-
-	/*
+	}
+		
+	/*我们是父进程(原始进程);我们继续执行，要知道的我们已经不是"孙子进程"的父进程
 	 * We're the parent (the original process); we continue executing,
 	 * knowing that we're not the parent of the second child.
 	 */
