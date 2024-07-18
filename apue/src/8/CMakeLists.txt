@@ -30,4 +30,4 @@ add_executable(echoall_8.10
 add_executable(exec1_8.10
                 exec1_8.10.c    
                 $<TARGET_OBJECTS:aque>)
-target_compile_definitions(exec1_8 PRIVATE "ROOT_DIR=${CMAKE_SOURCE_DIR}/bin/8") 
+target_compile_definitions(exec1_8.10 PRIVATE "ROOT_DIR=${CMAKE_SOURCE_DIR}/bin/8/") 

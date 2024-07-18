@@ -1,11 +1,17 @@
 #include "apue.h"
+#include <stdio.h>
 #include <sys/wait.h>
 //字符串数组
 char *env_init[] = { "USER=unknown", "PATH=/tmp", NULL };
+
 // 拼接字符串
 #define PROJECT_DIR_FILE_STR(x,y) x#y
+#define STR1(R) #R
+#define STR2(R) STR1(R)
 // 图8-16中的程序演示了exec函数
 int main(void) {
+	printf("rootdir=%s\n",STR2(ROOT_DIR));
+	printf("PROJECT_DIR_FILE_STR=%s\n",PROJECT_DIR_FILE_STR(STR2(ROOT_DIR),echoall_8.10));
 	pid_t	pid;
 	//创建子进程
 	if ((pid = fork()) < 0) {
@@ -19,7 +25,7 @@ int main(void) {
 			列表参数:"echoall", "myarg1","MY ARG2", (char *)0
 			环境字符串数组:env_init
 		*/
-		if (execle(PROJECT_DIR_FILE_STR(ROOT_DIR,"echoall_8.10"),
+		if (execle(PROJECT_DIR_FILE_STR(STR2(ROOT_DIR),echoall_8.10),
 				"echoall","myarg1","MY ARG2", (char *)0, 
 				env_init) < 0)
 			err_sys("execle error");
