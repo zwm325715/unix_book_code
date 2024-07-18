@@ -130,4 +130,6 @@ void	TELL_CHILD(pid_t);
 void	WAIT_PARENT(void);
 void	WAIT_CHILD(void);
 
+
+int append_env_PATH(char *newPath);
 #endif	/* _APUE_H */

@@ -5,6 +5,7 @@ set(LIB_SRCS
         setfl_3.14.c
         prexit_8.6.c
         tellwait.c
+        env.c
     )
 #aque对象库
 add_library(aque 
