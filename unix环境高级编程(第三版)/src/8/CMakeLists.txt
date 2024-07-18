@@ -24,4 +24,10 @@ add_executable(tellwait2_8.9
                 tellwait2_8.9.c
                 $<TARGET_OBJECTS:aque>)
 
-                
+add_executable(echoall_8.10
+                echoall_8.10.c
+                $<TARGET_OBJECTS:aque>)      
+add_executable(exec1_8.10
+                exec1_8.10.c    
+                $<TARGET_OBJECTS:aque>)
+target_compile_definitions(exec1_8 PRIVATE "ROOT_DIR=${CMAKE_SOURCE_DIR}/bin/8") 
