@@ -72,3 +72,10 @@ add_executable(systest1_8.13
                 systest1_8.13.c
                 $<TARGET_OBJECTS:aque>)
 
+add_executable(pruids_8.13
+                pruids_8.13.c
+                $<TARGET_OBJECTS:aque>)
+add_executable(systest3_8.13
+                systest3_8.13.c
+                $<TARGET_OBJECTS:aque>)                
+                
