@@ -6,9 +6,10 @@ set(LIB_SRCS
         prexit_8.6.c
         tellwait.c
         env.c
+        system_8.13.c
     )
 #aque对象库
 add_library(aque 
             OBJECT
-            ${LIB_SRCS}    
+            ${LIB_SRCS} 
             )

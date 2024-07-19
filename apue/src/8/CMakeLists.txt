@@ -67,3 +67,8 @@ if(${AWKEXAMPLE_CHMOD_RES} EQUAL 0)
 else()
     message (FATAL_ERROR "${CMAKE_SOURCE_DIR}/src/8/awkexample增加执行权限失败!")
 endif()
+
+add_executable(systest1_8.13
+                systest1_8.13.c
+                $<TARGET_OBJECTS:aque>)
+

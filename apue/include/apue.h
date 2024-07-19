@@ -136,4 +136,5 @@ void	WAIT_CHILD(void);
 
 
 int append_env_PATH(char *newPath);
+int system(const char *cmdstring);
 #endif	/* _APUE_H */

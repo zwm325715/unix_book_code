@@ -1,6 +1,8 @@
-#include	<sys/wait.h>
-#include	<errno.h>
-#include	<unistd.h>
+#include <apue.h>
+#include <stdio.h>
+#include <sys/wait.h>
+#include <errno.h>
+#include <unistd.h>
 /*
 	图8-22中的程序是system函数的一种实现().
 	它对信号没有进行处理(10.18节将修改使其进行信号处理)
@@ -17,10 +19,13 @@ int system(const char *cmdstring) {
 		/* probably out of processes */
 		status = -1;	
 	} else if (pid == 0) {/* 子进程 child */
-		//执行shell
-		execl("/bin/sh", "sh", "-c", cmdstring, (char *)0);
-		//退出码127
-		_exit(127);		/* execl error */
+		//执行shell:成功执行时，不返回；执行出错时，返回-1
+		printf("------开始调用execl-----------\n");
+		int res = execl("/bin/sh", "sh", "-c", cmdstring, (char *)0);
+		printf("execl执行成功或失败都不会跑下面的代码了\n");
+		//退出码110(这里从127改成了110，避免与标准输出的exit status误解)
+		//,该退出状态不会返回给调用方
+		_exit(110);	/* execl error */
 	} else { /* 父进程 parent */
 		//循环执行给pid收尸直到成功，退出状态保存到status，
 		while (waitpid(pid, &status, 0) < 0) {
