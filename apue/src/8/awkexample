@@ -1,0 +1,9 @@
+#!/usr/bin/awk -f
+#在解释器文件中使用-f选项，表示在此解释器文件中后跟随awk程序
+# Note: on Solaris, use nawk instead
+# 图8021 作为解释器文件的awk程序
+BEGIN {
+	for (i = 0; i < ARGC; i++)
+		printf "ARGV[%d] = %s\n", i, ARGV[i]
+	exit
+}
