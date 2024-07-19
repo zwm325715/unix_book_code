@@ -31,3 +31,22 @@ add_executable(exec1_8.10
                 exec1_8.10.c    
                 $<TARGET_OBJECTS:aque>)
 target_compile_definitions(exec1_8.10 PRIVATE "ROOT_DIR=${CMAKE_SOURCE_DIR}/bin/8/") 
+
+
+#创建文件
+set(TESTINTERP_CONTENT "#! ${CMAKE_SOURCE_DIR}/bin/7/echoarg_7.4 foo")
+file(WRITE ${CMAKE_SOURCE_DIR}/bin/8/testinterp ${TESTINTERP_CONTENT})
+# 变更权限
+execute_process(COMMAND chmod u+x ${CMAKE_SOURCE_DIR}/bin/8/testinterp
+                #当前目录下执行命令grep
+                # WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                RESULT_VARIABLE TESTINTERP_CHMOD_RES)
+if(${TESTINTERP_CHMOD_RES} EQUAL 0)
+    message (SATUS " ---${CMAKE_SOURCE_DIR}/bin/8/testinterp增加执行权限成功!")
+else()
+    message (FATAL_ERROR "${CMAKE_SOURCE_DIR}/bin/8/testinterp增加执行权限失败!")
+endif()
+add_executable(exec2_8.12
+                exec2_8.12.c
+                $<TARGET_OBJECTS:aque>)
+target_compile_definitions(exec2_8.12 PRIVATE "ROOT_DIR=${CMAKE_SOURCE_DIR}/bin/8/") 

@@ -5,11 +5,6 @@
 //字符串数组
 char *env_init[] = { "USER=unknown", "PATH=/tmp", NULL };
 
-// 拼接字符串
-#define PROJECT_DIR_FILE_STR(x,y) x#y
-// 宏变为字符串
-#define STR1(R) #R
-#define STR2(R) STR1(R)
 // 图8-16中的程序演示了exec函数
 int main(void) {
 	pid_t	pid;

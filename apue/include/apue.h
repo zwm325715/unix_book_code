@@ -27,7 +27,11 @@
 #include <signal.h>		/* for SIG_ERR */
 
 #define	MAXLINE	4096			/* max line length */
-
+// 宏变为字符串
+#define STR1(R) #R
+#define STR2(R) STR1(R)
+// 拼接字符串
+#define PROJECT_DIR_FILE_STR(x,y) x#y
 /*
  * Default file access permissions for new files.
  */

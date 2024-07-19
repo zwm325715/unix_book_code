@@ -89,7 +89,11 @@ function main(){
       clean
       ;;
     *)
-      echo_err "不支持该参数$1;目前只支持(compile:编译; clean:清除编译的文件)"
+      echo_err "不支持该参数$1!"
+      echo_info "Usage ...:"
+      echo_info "    gen : 编译所有"
+      echo_info "    gen num: 编译第num个章节(num是个数字)"
+      echo_info "    clean:清除编译的文件"
       ;;  
     esac
 }
