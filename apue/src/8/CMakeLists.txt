@@ -77,5 +77,9 @@ add_executable(pruids_8.13
                 $<TARGET_OBJECTS:aque>)
 add_executable(systest3_8.13
                 systest3_8.13.c
-                $<TARGET_OBJECTS:aque>)                
+                $<TARGET_OBJECTS:aque>)
+
+add_executable(nice_8.16
+                nice_8.16.c
+                $<TARGET_OBJECTS:aque>)
                 
