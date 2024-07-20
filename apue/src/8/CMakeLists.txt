@@ -82,4 +82,16 @@ add_executable(systest3_8.13
 add_executable(nice_8.16
                 nice_8.16.c
                 $<TARGET_OBJECTS:aque>)
+
+add_executable(times1_8.17
+                times1_8.17.c
+                $<TARGET_OBJECTS:aque>)
+
+add_executable(vfork3_C-8
+                vfork3_C-8.c
+                $<TARGET_OBJECTS:aque>)
+
+add_executable(zombie_C-10
+                zombie_C-10.c
+                $<TARGET_OBJECTS:aque>)                
                 
