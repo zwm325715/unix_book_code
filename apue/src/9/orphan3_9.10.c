@@ -44,16 +44,14 @@ int main(void) {
 		pr_ids("child");//子进程信息
 		/* establish signal handler 设立信号handler*/
 		signal(SIGHUP, sig_hup);
-		/* 
-		1.stop ourself 终止自己
-		2.子进程使用kill向其自身发送停止(SIGTSTP)信号
-			这将停止子进程，类似于用终端挂起字符(ctrl+Z)停止一个前台作业
-		*/
 		printf("child will stop by signal SIGTSTP!but not terminate~\n");
-		/*
-		1.子进程停止了，此时变成了一个新的"孤儿进程组"了，
+		/* 
+		stop ourself 终止自己
+		1.子进程使用kill向其自身发送停止(SIGTSTP)信号
+			这将停止子进程，类似于用终端挂起字符(ctrl+Z)停止一个前台作业
+		2.子进程停止了，此时变成了一个新的"孤儿进程组"了，
 			内核会发送SIGHUP->SIGCONT信号给该子进程
-		2.子进程恢复执行的代码顺序
+		3.子进程恢复执行的代码顺序
 			sig_hup()打印-> 继续执行kill下面的代码
 		*/
 		kill(getpid(), SIGTSTP);	
