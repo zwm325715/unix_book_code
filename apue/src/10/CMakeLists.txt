@@ -6,5 +6,7 @@ add_executable(sigusr_10.3
 add_executable(reenter_10.6
                 reenter_10.6.c
                 $<TARGET_OBJECTS:aque>)
-
+add_executable(child_10.7
+                child_10.7.c
+                $<TARGET_OBJECTS:aque>)
                 
