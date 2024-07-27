@@ -10,3 +10,17 @@ add_executable(child_10.7
                 child_10.7.c
                 $<TARGET_OBJECTS:aque>)
                 
+add_executable(tsleep2_10.10
+                tsleep2_10.10.c sleep2_10.10.c
+                $<TARGET_OBJECTS:aque>)
+add_executable(read1_10.10
+                read1_10.10.c
+                $<TARGET_OBJECTS:aque>)
+add_executable(read2_10.10
+                read2_10.10.c
+                $<TARGET_OBJECTS:aque>)                
+                
+add_executable(setops_10.11
+                setops_10.11.c
+                $<TARGET_OBJECTS:aque>) 
+
