@@ -20,7 +20,7 @@ add_executable(read2_10.10
                 read2_10.10.c
                 $<TARGET_OBJECTS:aque>)                
                 
-add_executable(setops_10.11
-                setops_10.11.c
+add_executable(critical_10.13
+                critical_10.13.c
                 $<TARGET_OBJECTS:aque>) 
 

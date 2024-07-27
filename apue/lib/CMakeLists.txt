@@ -7,6 +7,7 @@ set(LIB_SRCS
         tellwait.c
         env.c
         system_8.13.c
+        prmask_10.12.c
     )
 #aque对象库
 add_library(aque 
