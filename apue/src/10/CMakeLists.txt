@@ -24,3 +24,7 @@ add_executable(critical_10.13
                 critical_10.13.c
                 $<TARGET_OBJECTS:aque>) 
 
+add_executable(mask_10.15
+                mask_10.15.c
+                $<TARGET_OBJECTS:aque>) 
+                
