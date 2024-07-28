@@ -6,6 +6,14 @@
 static void						sig_usr1(int);
 static void						sig_alrm(int);
 static sigjmp_buf				jmpbuf;
+/*
+sig_atomic_t数据类型:
+1.在写这种类型变量时不会被中断.
+  这意味着在具有虚拟存储器的系统上,这种变量不会跨越页边界，
+  可以用一条机器指令对其进行访问
+2.这种类型的变量总是包括修饰符volatile,原因是
+  该变量由2个不同的控制线程-main函数和异步执行的handler访问
+*/
 static volatile sig_atomic_t	canjump;
 
 //图10-20 信号屏蔽、sigsetjmp和siglongjmp实例

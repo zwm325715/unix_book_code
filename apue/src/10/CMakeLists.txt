@@ -27,4 +27,11 @@ add_executable(critical_10.13
 add_executable(mask_10.15
                 mask_10.15.c
                 $<TARGET_OBJECTS:aque>) 
-                
+
+add_executable(suspend1_10.16
+                suspend1_10.16.c
+                $<TARGET_OBJECTS:aque>) 
+
+add_executable(suspend2_10.16
+                suspend2_10.16.c
+                $<TARGET_OBJECTS:aque>) 

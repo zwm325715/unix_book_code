@@ -19,6 +19,8 @@ void pr_mask(const char *str) {
 			printf(" SIGQUIT in sigset!");
 		if (sigismember(&sigset, SIGUSR1))//SIGUSR1
 			printf(" SIGUSR1 in sigset!");
+		if (sigismember(&sigset, SIGUSR2))//SIGUSR2
+			printf(" SIGUSR2 in sigset!");	
 		if (sigismember(&sigset, SIGALRM))//SIGALRM
 			printf(" SIGALRM in sigset!");
 		printf("\n");
