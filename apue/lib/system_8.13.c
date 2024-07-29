@@ -5,7 +5,7 @@
 #include <unistd.h>
 /*
 	图8-22中的程序是system函数的一种实现().
-	它对信号没有进行处理(10.18节将修改使其进行信号处理)
+	它对信号没有进行处理(10.18节将修改使其进行信号处理:system_10.18.c)
 */
 /* version without signal handling */
 int system(const char *cmdstring) {
