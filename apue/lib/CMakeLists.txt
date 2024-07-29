@@ -4,7 +4,7 @@ set(LIB_SRCS
         pathalloc.c 
         setfl_3.14.c
         prexit_8.6.c
-        tellwait.c
+        tellwait_10.16.c
         env.c
         system_8.13.c
         prmask_10.12.c
