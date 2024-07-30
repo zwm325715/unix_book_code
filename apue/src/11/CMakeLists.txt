@@ -4,3 +4,14 @@ add_executable(threadid_11.4
                 threadid_11.4.c
                 $<TARGET_OBJECTS:aque>)
 target_link_libraries(threadid_11.4 PRIVATE -lpthread)
+
+add_executable(exitstatus_11.5
+                exitstatus_11.5.c
+                $<TARGET_OBJECTS:aque>)
+target_link_libraries(exitstatus_11.5 PRIVATE -lpthread)
+
+add_executable(badexit2_11.5
+                badexit2_11.5.c
+                $<TARGET_OBJECTS:aque>)
+target_link_libraries(badexit2_11.5 PRIVATE -lpthread)
+
