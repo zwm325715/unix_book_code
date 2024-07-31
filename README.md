@@ -6,7 +6,7 @@
   * 源码定制成**linux**的实现
 ## tlpi(The Linux Programming Interface)
   * 位于tlpi目录
-## 编译命令
+# 2.编译命令
 * `编译环境`
   * centos操作系统
   * gcc编译器
@@ -23,5 +23,5 @@
 * `清除`
   * sh build.sh clean
 
-# 2.目录说明
+# 3.目录说明
 <img src="目录说明.png" style="zoom:100%;" />
