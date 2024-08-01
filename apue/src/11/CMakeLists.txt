@@ -20,4 +20,7 @@ add_executable(cleanup_11.5
                 $<TARGET_OBJECTS:aque>)
 target_link_libraries(cleanup_11.5 PRIVATE -lpthread)
 
-
+add_executable(timedlock_11.6.3
+                timedlock_11.6.3.c
+                $<TARGET_OBJECTS:aque>)
+target_link_libraries(timedlock_11.6.3 PRIVATE -lpthread)
