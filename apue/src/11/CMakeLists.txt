@@ -24,3 +24,8 @@ add_executable(timedlock_11.6.3
                 timedlock_11.6.3.c
                 $<TARGET_OBJECTS:aque>)
 target_link_libraries(timedlock_11.6.3 PRIVATE -lpthread)
+
+# add_executable(barrier_11.6.8
+#                 barrier_11.6.8.c
+#                 $<TARGET_OBJECTS:aque>)
+# target_link_libraries(barrier_11.6.8 PRIVATE -lpthread)
