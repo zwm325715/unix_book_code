@@ -5,3 +5,8 @@ add_executable(suspend_12.8
                 $<TARGET_OBJECTS:aque>)
 target_link_libraries(suspend_12.8 PRIVATE -lpthread)
 
+
+add_executable(atfork_12.9
+                atfork_12.9.c
+                $<TARGET_OBJECTS:aque>)
+target_link_libraries(atfork_12.9 PRIVATE -lpthread)
