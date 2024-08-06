@@ -22,3 +22,19 @@ void set_fl(int fd, int flags) {
 	if (fcntl(fd, F_SETFL, val) < 0)
 		err_sys("fcntl F_SETFL error");
 }
+
+/* 
+	flags are the file status flags to turn off
+	关掉文件状态标志
+ */
+void clr_fl(int fd, int flags) {
+	int		val;
+	//取到原来的
+	if ((val = fcntl(fd, F_GETFL, 0)) < 0)
+		err_sys("fcntl F_GETFL error");
+	//取反做与运算  就是关闭该位了
+	val &= ~flags; /* turn flags off */
+	//再设置回去
+	if (fcntl(fd, F_SETFL, val) < 0)
+		err_sys("fcntl F_SETFL error");
+}

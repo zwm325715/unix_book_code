@@ -9,6 +9,7 @@ set(LIB_SRCS
         # system_8.13.c
         system_10.18.c
         prmask_10.12.c
+        lockreg_14.3.c
     )
 #aque对象库
 add_library(aque 
