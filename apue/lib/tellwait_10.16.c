@@ -1,4 +1,5 @@
 #include "apue.h"
+#include <unistd.h>
 
 //图10-24 父子进程用信号来实现同步
 
@@ -11,7 +12,7 @@ static sigset_t newmask, oldmask, zeromask;
 static void sig_usr(int signo) {
 	sigflag = 1;
 }
-
+//阻塞SIGUSR1和SIGUSR2 信号
 void TELL_WAIT(void) {
 	//设置handler
 	if (signal(SIGUSR1, sig_usr) == SIG_ERR)
@@ -34,8 +35,11 @@ void WAIT_PARENT(void) {
 	//全局变量sigflag没有被设置值时
 	while (sigflag == 0) {
 		/* and wait for parent */
-		//进程挂起等待
+		//进程挂起等待(信号屏蔽字更改为不阻塞任何信号)
+		//捕捉到任何一个信号(包括SIGUSR1,SIGUSR2)时sigsuspend会返回
+		printf("进程挂起,pid=%d\n",getpid());
 		sigsuspend(&zeromask);
+		printf("进程被唤醒,pid=%d\n",getpid());
 	}
 	//重置为0
 	sigflag = 0;
