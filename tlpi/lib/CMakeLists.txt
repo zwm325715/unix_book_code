@@ -1,0 +1,9 @@
+set(LIB_SRCS 
+        error_functions.c 
+        get_num.c
+    )
+#aque对象库
+add_library(tlpi 
+            OBJECT
+            ${LIB_SRCS} 
+            )
