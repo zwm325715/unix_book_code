@@ -1,0 +1,6 @@
+VER_1 {
+    #xyz函数可见
+    global:xyz;
+    #隐藏其它的符号
+    local:*;
+};

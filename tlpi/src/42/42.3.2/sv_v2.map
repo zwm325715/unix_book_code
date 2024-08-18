@@ -1,0 +1,8 @@
+#修改之后的库对应的版本脚本
+VER_1 {
+    global: xyz;
+    local: *;
+};
+VER_2 {
+    global:pqr;
+} VER_1;  #依赖于标签VER_1(可以理解成继承)
