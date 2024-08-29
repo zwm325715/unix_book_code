@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 3.0)
 
 execute_process(COMMAND which gcc COMMAND tr -d '\n' OUTPUT_VARIABLE GCC_BIN)
 set(CMAKE_C_COMPILER ${GCC_BIN})
+message (SATUS " gcc compiler path=${CMAKE_C_COMPILER}!")
+execute_process(COMMAND which g++ COMMAND tr -d '\n' OUTPUT_VARIABLE GPLUS_BIN)
+set(CMAKE_CXX_COMPILER ${GPLUS_BIN})
+message (SATUS " g++ compiler path=${CMAKE_CXX_COMPILER}!")
 
 project(UNIX 
         VERSION 1.0.0

@@ -1,0 +1,58 @@
+{
+    "clangd.path": "/usr/local/soft/clang_llvm14.0.6/bin/clangd",
+    // Language Support for Java(Tm) by Red Hat(0.65版本以上的配置)
+    "java.jdt.ls.java.home": "/home/ob/soft/jdk17.0.9",
+    //在 Java 项目中使用的 Java 运行时环境
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-1.8",
+            "sources": "/home/ob/cplus_ws/openjdk8/jdk/src/share/classes",//这是项目空间
+            // "sources": "/home/ob/cplus_ws/openjdk8/build/linux-x86_64-normal-server-slowdebug/images/src.zip", 这是压缩包
+            "path": "/home/ob/cplus_ws/openjdk8/build/linux-x86_64-normal-server-slowdebug/jdk",
+            "default": true
+        }
+    ],
+    //设置clangd是否检测扩展的冲突
+    "clangd.detectExtensionConflicts": true,
+    "clangd.arguments": [
+        "--enable-config",
+        // compile_commands.json文件所在的目录,不同项目自行调整
+        "--compile-commands-dir=${workspaceFolder}/tlpi/build/",
+        //在后台自动分析文件（基于complie_commands)
+        "--background-index",
+        // 同时开启的任务数量
+        "-j=12",
+        // clang-tidy功能
+        "--clang-tidy",
+        // 全局补全（会自动补充头文件）
+        "--all-scopes-completion",
+        // 详细补全
+        "--completion-style=detailed",
+        // 补充头文件
+        // "--header-insertion=iwyu",
+        "--header-insertion=never",
+        // pch优化的位置
+        "--pch-storage=disk",
+        // 让 Clangd 生成更详细的日志
+        "--log=verbose",
+        // 输出的 JSON 文件更美观
+        "--pretty",
+        // 跨文件重命名变量
+        "--cross-file-rename"
+    ],
+    "clangd.serverCompletionRanking": true,
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx6G -Xms400m -Xlog:disable",
+    //左侧工程目录中需要排除的文件或者文件夹
+    "files.exclude": {
+        // "**/build/**": true,
+        "**/.cache/**":true,
+        "**/.jcheck/**":true,
+    },
+    //在搜索结果中排除的文件或者文件夹
+    "search.exclude": {
+        "**/build/**": true
+    },
+    "lldb.displayFormat": "auto",
+    "lldb.dereferencePointers": true,
+    "lldb.consoleMode": "commands"
+}
