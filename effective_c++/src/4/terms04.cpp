@@ -62,7 +62,12 @@ ABEntry02::ABEntry02()
     _refvar = myString;//NO
 };
 
-
+class FileSystem {...};
+//定义了local static对象的函数，返回一个reference指向该对象
+FileSystem& tfs() {
+    static FileSystem fs;
+    return fs;
+}
     
 
 
