@@ -1,11 +1,9 @@
 # 版本 cmake --version来查看当前安装的cmake版本
-cmake_minimum_required(VERSION 3.0)
-
-execute_process(COMMAND which gcc COMMAND tr -d '\n' OUTPUT_VARIABLE GCC_BIN)
-set(CMAKE_C_COMPILER ${GCC_BIN})
+cmake_minimum_required(VERSION 3.8)
+#支持c++17:需自己调整路径
+set(CMAKE_C_COMPILER "/usr/local/soft/gcc9.4.0/bin/gcc")
 message (SATUS " gcc compiler path=${CMAKE_C_COMPILER}!")
-execute_process(COMMAND which g++ COMMAND tr -d '\n' OUTPUT_VARIABLE GPLUS_BIN)
-set(CMAKE_CXX_COMPILER ${GPLUS_BIN})
+set(CMAKE_CXX_COMPILER "/usr/local/soft/gcc9.4.0/bin/g++")
 message (SATUS " g++ compiler path=${CMAKE_CXX_COMPILER}!")
 
 project(C++_Templates
@@ -15,8 +13,4 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-#头文件搜索目录
-# include_directories(${CMAKE_SOURCE_DIR}/include ${CMAKE_SOURCE_DIR}/lib)
-
-# add_subdirectory(lib)
 add_subdirectory(src)
