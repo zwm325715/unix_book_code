@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 /*
   1.关键字typename是类型参数的引导字:
     也可以使用关键字class来代替typename
@@ -9,4 +11,8 @@ template<typename T>
 T max (T a, T b) {
   //类型T必须支持运算符'<'
   return  b < a ? a : b;
-}
+};
+
+//默认实参的类型推导
+template<typename T=std::string>
+void f(T=""){};

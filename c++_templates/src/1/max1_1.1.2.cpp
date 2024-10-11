@@ -17,4 +17,8 @@ int main() {
   std::string s1 = "mathematics";
   std::string s2 = "math";
   std::cout << "max(s1,s2): " << ::max(s1,s2) << '\n';
+
+  //4.默认实参的类型推导
+  f(1);
+  f();
 }
