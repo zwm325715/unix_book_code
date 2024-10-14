@@ -2,5 +2,5 @@
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/bin/1)
 add_executable(term1_array
                 term1_array.cpp)
-            
+
                 
