@@ -9,7 +9,7 @@ class Stack {
   private:
     //在模版内部，可以取它的"值"
     std::array<T,Maxsize> elems; // elements
-    //使用上面的类型别名
+    //使用上面的类型别名(c++14时，可以只用auto作为返回类型)
     size_type numElems;          // current number of elements
   public:
     Stack();                   // constructor
