@@ -1,5 +1,7 @@
 #include "term3-2_decltype.hpp"
 #include <deque>
+#include <string>
+
 int main() {
     std::deque<int> d;
     /*
@@ -22,4 +24,11 @@ int main() {
     auto myWidget1 = cw;
     //类型为const Widget &
     decltype(auto) myWidget2 = cw;
+
+    //decltype烦恼点
+    int x=0;
+    //类型为int
+    decltype(x) x1 ;
+    //加上小括号变为复杂表达式了,从而类型变为:int &
+    decltype((x)) x2 = x;
 }

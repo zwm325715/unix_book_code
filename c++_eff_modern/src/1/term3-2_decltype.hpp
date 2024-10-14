@@ -1,3 +1,5 @@
+#include <iostream>
+
 //1.c++11能运作，但是需要改进
 template<typename Container,typename Index>
 auto authAndAccess1(Container& c,Index i) -> decltype(c[i]) {
@@ -21,7 +23,20 @@ decltype(auto) authAndAccess3(Container& c,Index i) {
     return c[i];
 }
 
+//C++14最终版:对容器使用万能引用
+template<typename Container,typename Index>
+decltype(auto) authAndAccess4(Container&& c,Index i) {
+    //使用完美转发
+    return std::forward<Container>(c) [i];
+}
 
-//4.C++14，decltype(auto)用在变量声明
+//C++11最终版:对容器使用万能引用
+template<typename Container,typename Index>
+auto authAndAccess5(Container&& c,Index i) ->decltype(std::forward<Container>(c)[i]){
+    //使用完美转发
+    return std::forward<Container>(c) [i];
+}
+
+//5.C++14，decltype(auto)用在变量声明
 class Widget {};
 
