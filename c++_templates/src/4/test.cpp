@@ -24,6 +24,10 @@ int main() {
     cout<<"-------case3:会调析构(YES)-------" <<endl;
     Test* t3 = new Test();
     delete t3;
+
+    if(true || false && false) {//true
+        cout<<"满足条件" <<endl;
+    }
 }
 /**测试结果
 [ob@localhost c++_templates]$ ./bin/4/test
