@@ -26,7 +26,16 @@ int main() {
     delete t3;
 
     if(true || false && false) {//true
-        cout<<"满足条件" <<endl;
+        cout<<"满足条件1" <<endl;
+    }
+    if(false || true && false) {//false
+        cout<<"满足条件2" <<endl;
+    }
+    if(false || true && true) {//true
+        cout<<"满足条件3" <<endl;
+    }
+    if(true || true && false) {//true
+        cout<<"满足条件4" <<endl;
     }
 }
 /**测试结果
