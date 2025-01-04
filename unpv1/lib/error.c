@@ -24,14 +24,12 @@ err_ret(const char *fmt, ...)
 /* Fatal error related to system call
  * Print message and terminate */
 
-void
-err_sys(const char *fmt, ...)
-{
+void err_sys(const char *fmt, ...) {
 	va_list		ap;
-
 	va_start(ap, fmt);
 	err_doit(1, LOG_ERR, fmt, ap);
 	va_end(ap);
+
 	exit(1);
 }
 
@@ -80,10 +78,7 @@ err_quit(const char *fmt, ...)
 
 /* Print message and return to caller
  * Caller specifies "errnoflag" and "level" */
-
-static void
-err_doit(int errnoflag, int level, const char *fmt, va_list ap)
-{
+static void err_doit(int errnoflag, int level, const char *fmt, va_list ap) {
 	int		errno_save, n;
 	char	buf[MAXLINE + 1];
 
@@ -91,7 +86,7 @@ err_doit(int errnoflag, int level, const char *fmt, va_list ap)
 #ifdef	HAVE_VSNPRINTF
 	vsnprintf(buf, MAXLINE, fmt, ap);	/* safe */
 #else
-	vsprintf(buf, fmt, ap);					/* not safe */
+	vsprintf(buf, fmt, ap);	/* not safe */
 #endif
 	n = strlen(buf);
 	if (errnoflag)
