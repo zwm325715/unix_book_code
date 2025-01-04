@@ -256,9 +256,7 @@ Waitpid(pid_t pid, int *iptr, int options)
 	return(retpid);
 }
 
-void
-Write(int fd, void *ptr, size_t nbytes)
-{
+void Write(int fd, void *ptr, size_t nbytes) {
 	if (write(fd, ptr, nbytes) != nbytes)
 		err_sys("write error");
 }

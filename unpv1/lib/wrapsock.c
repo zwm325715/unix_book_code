@@ -18,9 +18,7 @@
 
 #include	"unp.h"
 
-int
-Accept(int fd, struct sockaddr *sa, socklen_t *salenptr)
-{
+int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr) {
 	int		n;
 
 again:
@@ -37,9 +35,7 @@ again:
 	return(n);
 }
 
-void
-Bind(int fd, const struct sockaddr *sa, socklen_t salen)
-{
+void Bind(int fd, const struct sockaddr *sa, socklen_t salen) {
 	if (bind(fd, sa, salen) < 0)
 		err_sys("bind error");
 }
@@ -162,12 +158,10 @@ Kevent(int kq, const struct kevent *changelist, int nchanges,
 
 
 /* include Listen */
-void
-Listen(int fd, int backlog)
-{
+void Listen(int fd, int backlog) {
 	char	*ptr;
 
-		/*4can override 2nd argument with environment variable */
+	/*4can override 2nd argument with environment variable */
 	if ( (ptr = getenv("LISTENQ")) != NULL)
 		backlog = atoi(ptr);
 
@@ -285,14 +279,12 @@ Sockatmark(int fd)
 }
 
 /* include Socket */
-int
-Socket(int family, int type, int protocol)
-{
-	int		n;
+int Socket(int family, int type, int protocol) {
+	int	n;
 
 	if ( (n = socket(family, type, protocol)) < 0)
 		err_sys("socket error");
-	return(n);
+	return (n);
 }
 /* end Socket */
 
