@@ -3,11 +3,16 @@
 #ifdef	HAVE_SOCKADDR_DL_STRUCT
 #include	<net/if_dl.h>
 #endif
-
-int
-sock_cmp_port(const struct sockaddr *sa1, const struct sockaddr *sa2,
-			 socklen_t salen)
-{
+/**
+ * 比较两个套接字地址结构的端口号部分
+ * @param sa1
+ * @param sa2
+ * @param salen
+ * @return 同一协议族且相同时为0,否则为非0
+ */
+int sock_cmp_port(const struct sockaddr *sa1,
+                  const struct sockaddr *sa2,
+			      socklen_t salen) {
 	if (sa1->sa_family != sa2->sa_family)
 		return(-1);
 

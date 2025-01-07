@@ -4,19 +4,27 @@
 #include	<net/if_dl.h>
 #endif
 
-int
-sock_cmp_addr(const struct sockaddr *sa1, const struct sockaddr *sa2,
-			 socklen_t salen)
-{
+/**
+ * 比较2个套接字地址结构的地址部分
+ * @param sa1
+ * @param sa2
+ * @param salen
+ * @return 同一协议族且相同时为0,否则为非0
+ */
+int sock_cmp_addr(const struct sockaddr *sa1,
+                  const struct sockaddr *sa2,
+			      socklen_t salen) {
 	if (sa1->sa_family != sa2->sa_family)
 		return(-1);
 
 	switch (sa1->sa_family) {
-	case AF_INET: {
-		return(memcmp( &((struct sockaddr_in *) sa1)->sin_addr,
-					   &((struct sockaddr_in *) sa2)->sin_addr,
-					   sizeof(struct in_addr)));
-	}
+      //IPv4
+      case AF_INET: {
+          //比较地址字节内容是否相等
+          return(memcmp( &((struct sockaddr_in *) sa1)->sin_addr,
+                         &((struct sockaddr_in *) sa2)->sin_addr,
+                         sizeof(struct in_addr)));
+      }
 
 #ifdef	IPV6
 	case AF_INET6: {
