@@ -5,10 +5,7 @@ static int	read_cnt;
 static char	*read_ptr;
 static char	read_buf[MAXLINE];
 
-static ssize_t
-my_read(int fd, char *ptr)
-{
-
+static ssize_t my_read(int fd, char *ptr) {
 	if (read_cnt <= 0) {
 again:
 		if ( (read_cnt = read(fd, read_buf, sizeof(read_buf))) < 0) {
@@ -25,9 +22,7 @@ again:
 	return(1);
 }
 
-ssize_t
-readline(int fd, void *vptr, size_t maxlen)
-{
+ssize_t readline(int fd, void *vptr, size_t maxlen) {
 	ssize_t	n, rc;
 	char	c, *ptr;
 
