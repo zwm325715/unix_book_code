@@ -52,9 +52,7 @@ readlinebuf(void **vptrptr)
 }
 /* end readline */
 
-ssize_t
-Readline(int fd, void *ptr, size_t maxlen)
-{
+ssize_t Readline(int fd, void *ptr, size_t maxlen) {
 	ssize_t		n;
 
 	if ( (n = readline(fd, ptr, maxlen)) < 0)

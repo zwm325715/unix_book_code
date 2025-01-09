@@ -40,9 +40,7 @@ void Bind(int fd, const struct sockaddr *sa, socklen_t salen) {
 		err_sys("bind error");
 }
 
-void
-Connect(int fd, const struct sockaddr *sa, socklen_t salen)
-{
+void Connect(int fd, const struct sockaddr *sa, socklen_t salen) {
 	if (connect(fd, sa, salen) < 0)
 		err_sys("connect error");
 }

@@ -70,9 +70,7 @@ Ioctl(int fd, int request, void *arg)
 	return(n);	/* streamio of I_LIST returns value */
 }
 
-pid_t
-Fork(void)
-{
+pid_t Fork(void) {
 	pid_t	pid;
 
 	if ( (pid = fork()) == -1)

@@ -29,9 +29,7 @@ ssize_t	writen(int fd, const void *vptr, size_t n) {
 
 /* end writen */
 
-void
-Writen(int fd, void *ptr, size_t nbytes)
-{
+void Writen(int fd, void *ptr, size_t nbytes) {
 	if (writen(fd, ptr, nbytes) != nbytes)
 		err_sys("writen error");
 }

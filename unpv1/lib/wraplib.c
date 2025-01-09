@@ -17,9 +17,8 @@ Inet_ntop(int family, const void *addrptr, char *strptr, size_t len)
 	return(ptr);
 }
 
-void
-Inet_pton(int family, const char *strptr, void *addrptr)
-{
+//IP地址转换: strptr字符串 到 二进制到addrptr中
+void Inet_pton(int family, const char *strptr, void *addrptr) {
 	int		n;
 
 	if ( (n = inet_pton(family, strptr, addrptr)) < 0)
