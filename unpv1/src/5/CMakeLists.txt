@@ -17,3 +17,8 @@ add_executable(tcpcli04_5-9
         tcpcli04_5-9.c)
 target_link_libraries(tcpcli04_5-9 PRIVATE unp)
 
+
+add_executable(tcpserv04_5-12
+        tcpserv04_5-12.c
+        sigchldwaitpid_5-11.c)
+target_link_libraries(tcpserv04_5-12 PRIVATE unp)
