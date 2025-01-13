@@ -1,10 +1,3 @@
-
-/* Listing 3-1 */
-
-/* tlpi_hdr.h
-
-   Standard header file used by nearly all of our example programs.
-*/
 #ifndef TLPI_HDR_H
 #define TLPI_HDR_H      /* Prevent accidental double inclusion */
 
