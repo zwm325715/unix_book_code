@@ -10,13 +10,12 @@
 #define NORETURN
 #endif
 
-/**
- * 在标准错误打印消息
- * @param format
- * @param ...
- */
+//1.在标准错误打印消息: "errno信息" 和 "可变参数实参" 拼接起来的字符串
+//2.进程不终止
 void errMsg(const char *format, ...);
 
+//1.在标准错误打印消息: "errno信息" 和 "可变参数实参" 拼接起来的字符串
+//2.进程会终止
 void errExit(const char *format, ...) NORETURN ;
 void err_exit(const char *format, ...) NORETURN ;
 void errExitEN(int errnum, const char *format, ...) NORETURN ;

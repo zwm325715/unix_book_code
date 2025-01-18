@@ -1,3 +1,4 @@
+//errno错误码对应的名字
 static char *ename[] = {
     /*   0 */ "",
     /*   1 */ "EPERM", "ENOENT", "ESRCH", "EINTR", "EIO", "ENXIO",
