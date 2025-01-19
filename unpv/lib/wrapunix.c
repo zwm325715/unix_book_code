@@ -134,11 +134,10 @@ Pipe(int *fds)
 		err_sys("pipe error");
 }
 
-ssize_t
-Read(int fd, void *ptr, size_t nbytes)
-{
-	ssize_t		n;
-
+//从fd中读
+ssize_t Read(int fd, void *ptr, size_t nbytes) {
+	ssize_t		n;//有符号整数:成功时表示读取到的字节数
+    //-1表示读取失败
 	if ( (n = read(fd, ptr, nbytes)) == -1)
 		err_sys("read error");
 	return(n);
@@ -255,6 +254,7 @@ Waitpid(pid_t pid, int *iptr, int options)
 }
 
 void Write(int fd, void *ptr, size_t nbytes) {
+    //这里没考虑中断
 	if (write(fd, ptr, nbytes) != nbytes)
 		err_sys("write error");
 }
