@@ -8,3 +8,8 @@ add_executable(6.7_tcpcli02
         6.7_tcpcli02.c
         6.7_strcliselect02.c)
 target_link_libraries(6.7_tcpcli02 PRIVATE unp)
+
+
+add_executable(6.11_tcpservpoll01
+        6.11_tcpservpoll01.c)
+target_link_libraries(6.11_tcpservpoll01 PRIVATE unp)

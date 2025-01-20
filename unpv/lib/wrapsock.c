@@ -169,9 +169,7 @@ void Listen(int fd, int backlog) {
 /* end Listen */
 
 #ifdef	HAVE_POLL
-int
-Poll(struct pollfd *fdarray, unsigned long nfds, int timeout)
-{
+int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout) {
 	int		n;
 
 	if ( (n = poll(fdarray, nfds, timeout)) < 0)
