@@ -1,4 +1,5 @@
 .cache
+.vscode
 build
 bin
 *.clion.source.upload.marker
