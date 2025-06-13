@@ -3,3 +3,5 @@ add_executable(varprint1_4.1.1
         varprint1_4.1.1.cpp)
 add_executable(test
         test.cpp)
+add_executable(varprint2_4.1.2
+        varprint2_4.1.2.cpp)

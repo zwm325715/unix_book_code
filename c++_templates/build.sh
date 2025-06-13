@@ -9,7 +9,6 @@ BUILD_PATH=$BASE_PATH/build
 BIN_PATH=$BASE_PATH/bin
 #CmakeList.txt
 CMAKELIST_PATH=$BASE_PATH/CMakeLists.txt
-
 function echo_info() {
   echo -e "[build.sh][INFO] $@" 
 }

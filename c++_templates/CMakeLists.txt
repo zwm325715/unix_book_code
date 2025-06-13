@@ -6,8 +6,7 @@ message (SATUS " gcc compiler path=${CMAKE_C_COMPILER}!")
 set(CMAKE_CXX_COMPILER "/usr/local/soft/gcc9.4.0/bin/g++")
 message (SATUS " g++ compiler path=${CMAKE_CXX_COMPILER}!")
 
-project(C++_Templates
-        VERSION 1.0.0)
+project(C++_Templates VERSION 1.0.0)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 set(CMAKE_CXX_STANDARD 17)
