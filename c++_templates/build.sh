@@ -43,10 +43,10 @@ function compile() {
     # 没有传参数时就是编译所有
     if [ -z "$1" ];then
       echo_info "----编译所有章节----"
-      cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCHAPTER=all "$BASE_PATH"
+      cmake  -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCHAPTER=all "$BASE_PATH"
     else #否则编译对应的参数章节
       echo_info "----编译第${1}章节----"
-      cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCHAPTER="$1" "$BASE_PATH"   
+      cmake  -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCHAPTER="$1" "$BASE_PATH"
     fi
     
     check_command "cmake编译" 
