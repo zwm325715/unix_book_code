@@ -30,12 +30,16 @@ void printDoubled(T const&... args) {
 template<typename T1, typename... TN>
 //判断所有实参的类型是否相同
 constexpr bool isHomogeneous(T1,TN...) {
+    //是个一元右折叠表达式:  &&是op操作符(逻辑与运算); ...是语法;  std::is_same<T1,TN>::value是pack
     return (std::is_same<T1,TN>::value && ...);//C++17起
 }
 
 int main(int argc, char *argv[]) {
     printDoubled(1,2,3,4,5);
-    isHomogeneous(43,-1,"hello");
-    //
-    isHomogeneous("hello"," ","world","!");//实参类型都被推导为char const*,因为是传值会导致退化
+
+    // 返回值的表达式扩展为:
+    //  std::is_same<int,int>::value && std:: std::is_same<int,char const*>::value
+    std::cout << "返回假:" << isHomogeneous(43,-1,"hello") << std::endl;
+    // 实参类型都被推导为char const*,因为是传值会导致退化
+    std::cout << "返回真:" << isHomogeneous("hello"," ","world","!") << std::endl;
 }
