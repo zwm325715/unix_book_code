@@ -11,3 +11,6 @@ add_executable(sizeof_4.1.3
 
 add_executable(varprint_4.4.1
         varprint_4.4.1.cpp)
+
+add_executable(varprint_4.4.2
+        varprint_4.4.2.cpp)
