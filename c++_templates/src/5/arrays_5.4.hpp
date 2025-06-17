@@ -31,7 +31,9 @@ struct MyClass<T[/*未知边界*/]> {
 template<typename T>
 // partial spec. for references to arrays of unknown bounds 未知边界数组引用的偏特化
 struct MyClass<T(&/*引用*/)[/*未知边界*/]> {
-  static void print() { std::cout << "print() for T(&)[]\n"; }
+  static void print() {
+    std::cout << "print() for T(&)[]\n";
+  }
 };
 
 template<typename T>
