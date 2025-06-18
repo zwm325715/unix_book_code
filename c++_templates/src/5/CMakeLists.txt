@@ -2,4 +2,5 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/bin/5)
 add_executable(this_5.3 this_5.3.cpp)
 add_executable(lessarray_5.4 lessarray_5.4.cpp)
 add_executable(arrays_5.4 arrays_5.4.cpp)
-
+add_executable(stack5decl_5.5 stack5decl_5.5.cpp)
+add_executable(stack6decl_5.5 stack6decl_5.5.cpp)
