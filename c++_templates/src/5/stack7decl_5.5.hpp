@@ -3,6 +3,7 @@
 template<typename T, typename Cont = std::deque<T> /*参数化内部的容器类型*/>
 class Stack {
   private:
+    //Cont<T> elems; 编译会报错，因为不是个模版
     Cont elems;                // elements
 
   public:

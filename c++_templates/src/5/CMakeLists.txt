@@ -13,3 +13,5 @@ add_executable(difCompVarTemplate_5.6 difCompVarTemplate1_5.6.cpp difCompVarTemp
 add_executable(vartemplate2_5.6 vartemplate2_5.6.cpp)
 add_executable(vartemplate_5.6.1 vartemplate_5.6.1.cpp)
 add_executable(vartemplate_5.6.2 vartemplate_5.6.2.cpp)
+add_executable(templateargs_5.7 templateargs_5.7.cpp)
+add_executable(stack8decl_5.7 stack8decl_5.7.cpp)
