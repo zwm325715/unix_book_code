@@ -17,11 +17,14 @@ class Person {
     Person (Person const& p) : name(p.name) {
         std::cout << "COPY-CONSTR Person '" << name << "'\n";
     }
-    //临时方案
+
+    //临时方案:这只是部分解决问题的方案,因为对于派生类对象，成员模版仍然更为匹配
     // Person (Person & p) : name(p.name) {
     //     std::cout << "COPY-CONSTR2 Person '" << name << "'\n";
     // }
+
     Person (Person&& p) : name(std::move(p.name)) {
         std::cout << "MOVE-CONSTR Person '" << name << "'\n";
     }
 };
+

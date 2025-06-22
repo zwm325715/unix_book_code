@@ -6,7 +6,8 @@ int main() {
 
     Person p2("tmp2");//正常(此时p2的构造不会创建临时字符串,STR推导为char const[4])
 
-    //Person p3(p1);//错误
+    // error: no matching function for call to '...(Person&)'
+    //Person p3(p1);//错误:本质是name(std::forward<STR>(n))时出错
 
     const Person p4_const("const_tmp2");//常量Person对象
     Person p4C(p4_const);//拷贝Person的常量对象 =>正常:拷贝构造
